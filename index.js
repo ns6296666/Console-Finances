@@ -140,3 +140,26 @@ for (var i = 1; i < finances.length; i++) {
 console.log("Greatest increase in profits:");
 console.log("Date: " + greatestIncrease.date);
 console.log("Amount: $" + greatestIncrease.amount);
+
+// calculating greatest decrease in profits
+
+var greatestDecrease = {
+  date: "",
+  amount: 0,
+};
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonth = finances[i][0];
+  var currentMonthProfit = finances[i][1];
+  var previousMonthProfit = finances[i - 1][1];
+  var monthlyChange = currentMonthProfit - previousMonthProfit;
+
+  if (monthlyChange < greatestDecrease.amount) {
+    greatestDecrease.date = currentMonth;
+    greatestDecrease.amount = monthlyChange;
+  }
+}
+
+console.log("Greatest decrease in losses:");
+console.log("Date: " + greatestDecrease.date);
+console.log("Amount: $" + greatestDecrease.amount);
