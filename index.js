@@ -88,7 +88,9 @@ var finances = [
 ];
 // calculating total months
 var totalMonths = finances.length;
-console.log("Total number of months included in the dataset: " + totalMonths);
+console.log("Financial Analysis");
+console.log("------------------------");
+console.log("Total Months: " + totalMonths);
 
 // calculating total amount of Profit/Losses
 
@@ -96,9 +98,7 @@ var netTotal = 0;
 for (var i = 0; i < finances.length; i++) {
   netTotal += finances[i][1];
 }
-console.log(
-  "Net total amount of Profit/Losses over the entire period: $" + netTotal
-);
+console.log("Total: $" + netTotal);
 
 // calculating average changes in Profit/Losses over the entire period
 
@@ -113,10 +113,7 @@ for (var i = 1; i < finances.length; i++) {
 
 var averageChange = totalChanges / (finances.length - 1);
 
-console.log(
-  "Average of the changes in Profit/Losses over the entire period: " +
-    averageChange
-);
+console.log("Average Change:" + averageChange);
 
 // calculating greatest increase in profits
 
@@ -137,9 +134,9 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
-console.log("Greatest increase in profits:");
-console.log("Date: " + greatestIncrease.date);
-console.log("Amount: $" + greatestIncrease.amount);
+console.log(
+  `Greatest Increase in Profits/Losses: ${greatestIncrease.date} ${greatestIncrease.amount}`
+);
 
 // calculating greatest decrease in profits
 
@@ -160,6 +157,6 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
-console.log("Greatest decrease in losses:");
-console.log("Date: " + greatestDecrease.date);
-console.log("Amount: $" + greatestDecrease.amount);
+console.log(
+  `Greatest Decrease in Profits/Losses: ${greatestDecrease.date} ${greatestDecrease.amount}`
+);
