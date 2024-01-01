@@ -99,3 +99,21 @@ for (var i = 0; i < finances.length; i++) {
 console.log(
   "Net total amount of Profit/Losses over the entire period: $" + netTotal
 );
+
+// calculating average changes in Profit/Losses over the entire period
+
+var totalChanges = 0;
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonthProfit = finances[i][1];
+  var previousMonthProfit = finances[i - 1][1];
+  var monthlyChange = currentMonthProfit - previousMonthProfit;
+  totalChanges += monthlyChange;
+}
+
+var averageChange = totalChanges / (finances.length - 1);
+
+console.log(
+  "Average of the changes in Profit/Losses over the entire period: " +
+    averageChange
+);
